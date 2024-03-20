@@ -11,9 +11,7 @@ public class RobotHazardCue : MonoBehaviour
     [SerializeField] [Range(0,1)] float movementFactor;
     [SerializeField] float period = 0.5f;
 
-    [SerializeField] GameObject warningBubble;
-
-
+    public Renderer rend;
     public bool hazardStatus = false;
 
     public bool played = false;
@@ -22,17 +20,16 @@ public class RobotHazardCue : MonoBehaviour
      Vector3 currentVectorPosition;
 
 
-    [SerializeField] ParticleSystem SweatParticles;
+    [SerializeField] ParticleSystem Particles;
 
 
     // Start is called before the first frame update
     void Start()
     {
         startingPostiion = transform.position;
-        warningBubble = GameObject.Find("WarningBubble");
-        warningBubble.SetActive(false);
 
         played = false;
+        rend.enabled = false;
         
     }
 
@@ -47,20 +44,20 @@ public class RobotHazardCue : MonoBehaviour
         
     if (hazardStatus == true && played == false)
     {
-        Instantiate(SweatParticles);
+        Instantiate(Particles);
 
-        SweatParticles.transform.position = currentVectorPosition;
+        Particles.transform.position = currentVectorPosition;
 
         period = 0.5f;
         played = true;
-        warningBubble.SetActive(true);
+        rend.enabled = true;
 
     }
     if (hazardStatus == false)
     {
         period = 1000f;
         played = false;
-        warningBubble.SetActive(false);
+        rend.enabled = false;
 
     }
         

@@ -380,11 +380,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!23 &636566228 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3606607019957006101, guid: 424cc6ec862b0d54d98de78cd099bb85, type: 3}
-  m_PrefabInstance: {fileID: 1694782522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &662426411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1718,7 +1713,7 @@ MonoBehaviour:
   hazardStatus: 0
   played: 0
   HazardOnsetManagerScript: {fileID: 2102962800}
-  SweatParticles: {fileID: 5597919307946809704, guid: cdbab7860a221ac4db4592f3cdc6149c, type: 3}
+  SweatParticles: {fileID: 5597919307946809704, guid: b84577acf9b3d9643b95c642c183a1f0, type: 3}
 --- !u!114 &1845458001 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2250009034102146117, guid: 7d7893d9fadc4014f85c23e447ac512a, type: 3}
@@ -2656,7 +2651,7 @@ MonoBehaviour:
   showDot: 0
   travelSpeed: 7
   RobotHeadMesh: {fileID: 1010340961}
-  CueMesh: {fileID: 636566228}
+  CueMesh: {fileID: 0}
   CentreTarget: {x: 0, y: 0, z: 0.5}
   basePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3552911193909891953
