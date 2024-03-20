@@ -6,29 +6,35 @@ public class RobotHazardCue : MonoBehaviour
 {
     //Script to make an object move between two points defined in the Unity playspace
 
-    Vector3 startingPostiion;
+    Vector3 startingPosition;
     [SerializeField] Vector3 movementVector;
     [SerializeField] [Range(0,1)] float movementFactor;
     [SerializeField] float period = 0.5f;
 
+
+    [SerializeField] float speed = 0.5f;
+
+    [SerializeField] float amount = 0.01f;
+
     public Renderer rend;
     public bool hazardStatus = false;
 
-    public bool played = false;
+    public bool playedPart = false;
     public GameObject HazardOnsetManagerScript;
 
-     Vector3 currentVectorPosition;
+    [SerializeField] Vector3 currentVectorPosition;
 
 
     [SerializeField] ParticleSystem Particles;
+    [SerializeField] public float yOffsetpart = 0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        startingPostiion = transform.position;
+        startingPosition = transform.position;
 
-        played = false;
+        playedPart = false;
         rend.enabled = false;
         
     }
@@ -36,49 +42,35 @@ public class RobotHazardCue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Oscillate();
+       // Oscillate();
         currentVectorPosition = this.transform.position;
+        
 
         hazardStatus = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().preHazard;
 
         
-    if (hazardStatus == true && played == false)
-    {
-        Instantiate(Particles);
+if (hazardStatus == true && !playedPart)
+{
+    Instantiate(Particles);
+    playedPart = true;
+}
 
-        Particles.transform.position = currentVectorPosition;
+if (hazardStatus == true)
+{
+    transform.position = new Vector3(Mathf.Sin(Time.time * speed) * amount, transform.position.y, transform.position.z);
+    rend.enabled = true;
+    Particles.transform.position = currentVectorPosition + new Vector3(0f, yOffsetpart, 0f);
+    
+}
+else if (hazardStatus == false)
+{
+    playedPart = false;
+    rend.enabled = false;
+    transform.position = transform.position;
+}
 
-        period = 0.5f;
-        played = true;
-        rend.enabled = true;
-
-    }
-    if (hazardStatus == false)
-    {
-        period = 1000f;
-        played = false;
-        rend.enabled = false;
-
-    }
         
     }
-
-    public void Oscillate()
-    {
-        if (period <= Mathf.Epsilon) { return; } //can't compare two floats - Epsilion is smallest possible unit in Unity to compare to
-        float cycles = Time.time / period; // continually growing over time
-        const float tau = Mathf.PI * 2; // constant value of 6.283 
-        float rawSinWave = Mathf.Sin(cycles * tau);
-
-        movementFactor = (rawSinWave + 1f) / 2f; // recalculated to go from 0 : 1 as opposed to sign wave -1 : 1
-
-        Vector3 offset = movementVector * movementFactor;
-        transform.position = startingPostiion + offset;
-    }
-
- 
-    
-
 
 
 }
