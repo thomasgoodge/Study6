@@ -22,6 +22,8 @@ public class HazardOnsetManager : MonoBehaviour
 
     public string clipName;
     public int hazardLocation;
+    public int hazardXLocation;
+    public int hazardYLocation;
     public float onset;
     public float offset;
     public float length;
@@ -264,6 +266,8 @@ public class HazardOnsetManager : MonoBehaviour
         offset = GetHazardOffset();
         clipName = GetClipName();
         hazardLocation = GetHazardLocation();
+        hazardXLocation = GetHazardXLocation();
+        hazardYLocation = GetHazardYLocation();
         length = GetClipLength(); 
         if (currentClip != "" && stopwatchRunning == false)
             {
@@ -292,6 +296,18 @@ public class HazardOnsetManager : MonoBehaviour
     {
         //function to retrieve the hazard location for the spawner
        return  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].Location;
+    }
+
+        public int GetHazardXLocation()
+    {
+        //function to retrieve the hazard location for the spawner
+       return  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].xLocation;
+    }
+
+        public int GetHazardYLocation()
+    {
+        //function to retrieve the hazard location for the spawner
+       return  HazardListScript.GetComponent<CSVReader>().myHazardList.hazard[clipRef].yLocation;
     }
 
     public float GetHazardOnset()

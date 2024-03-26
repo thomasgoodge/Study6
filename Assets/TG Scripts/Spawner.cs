@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TopCentreAOI = GameObject.Find("AOI(TopCentre)");
+        TopCentreAOI = GameObject.Find("AOI(Centre)");
         //Reset the respawn time to a random number within range 
         respawnTime = Random.Range(respawnRate / 2, respawnRate * 2);
         ObjectListLength = ObjectList.Count;

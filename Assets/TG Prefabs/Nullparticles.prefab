@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1137956149671867623}
   - component: {fileID: 2037248272338118587}
   m_Layer: 0
-  m_Name: SweatParticles
+  m_Name: Nullparticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9768129325648068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0042484803, y: 93.28162, z: 0.92496705}
+  m_LocalPosition: {x: 0.00429052, y: -0.20837708, z: 0.9249575}
   m_LocalScale: {x: 0.6141853, y: 0.6141853, z: 0.6141853}
   m_Children:
   - {fileID: 3267032546882038677}
@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9768129325648068}
   serializedVersion: 7
-  lengthInSec: 3.5
+  lengthInSec: 1
   simulationSpeed: 0.3
   stopAction: 2
   cullingMode: 0
@@ -4801,7 +4801,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: -5824749692309224946, guid: 11c0b75a3c20ff74988c01da1e6ddf5e, type: 3}
+  m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}

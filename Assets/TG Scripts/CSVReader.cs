@@ -23,6 +23,10 @@ public class CSVReader : MonoBehaviour
         public float Offset;
         public float Length;
         public int Location;
+
+        public int xLocation;
+
+        public int yLocation;
     }
 
     [System.Serializable]
@@ -55,7 +59,7 @@ public class CSVReader : MonoBehaviour
         string[] data = textAssetData.text.Split(new string [] { ",", "\n" }, StringSplitOptions.None);
         //each cell is new data point in string
 
-        int tableSize = data.Length /5  - 1;
+        int tableSize = data.Length /7  - 1;
         
         myHazardList.hazard = new Hazard[tableSize];
 
@@ -64,15 +68,21 @@ public class CSVReader : MonoBehaviour
             
             myHazardList.hazard[i] = new Hazard();
             
-            myHazardList.hazard[i].ClipName = data[5 * (i + 1)];
+            myHazardList.hazard[i].ClipName = data[7 * (i + 1)];
             
-            myHazardList.hazard[i].Onset = float.Parse(data[5 * (i + 1) + 1]);
+            myHazardList.hazard[i].Onset = float.Parse(data[7 * (i + 1) + 1]);
             
-            myHazardList.hazard[i].Offset = float.Parse(data[5 * (i + 1) + 2]);
+            myHazardList.hazard[i].Offset = float.Parse(data[7 * (i + 1) + 2]);
 
-            myHazardList.hazard[i].Length = float.Parse(data[5 * (i + 1) + 3]);
+            myHazardList.hazard[i].Length = float.Parse(data[7 * (i + 1) + 3]);
             
-            myHazardList.hazard[i].Location = int.Parse(data[5 * (i + 1) + 4]);
+            myHazardList.hazard[i].Location = int.Parse(data[7 * (i + 1) + 4]);
+
+            myHazardList.hazard[i].xLocation = int.Parse(data[7 * (i + 1) + 5]);
+
+            myHazardList.hazard[i].yLocation = int.Parse(data[7 * (i + 1) + 6]);
+
+
         }
 
 

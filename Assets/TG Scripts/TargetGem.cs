@@ -22,6 +22,10 @@ public class TargetGem : MonoBehaviour
 
     public MeshRenderer RobotMesh;
 
+    public MeshRenderer EarsMesh;
+    public MeshRenderer AntennaMesh;
+
+
     public float  rotationSpeed = 1.0f;
 
     public Vector3 SearchTarget;
@@ -78,15 +82,21 @@ public class TargetGem : MonoBehaviour
 
         if (showHead == false)
             {
-                 RobotMesh.enabled = false;
+                RobotMesh.enabled = false;
+                EarsMesh.enabled = false;
+                AntennaMesh.enabled = false;
             }
         else if (showHead == true)
             {
                 RobotMesh.enabled = true;
+                EarsMesh.enabled = true;
+                AntennaMesh.enabled = true;
             }
         else
         {
             RobotMesh.enabled = true;
+            EarsMesh.enabled = true;
+            AntennaMesh.enabled = true;
         }
         
     }

@@ -22,6 +22,8 @@ public class RobotHazardCue : MonoBehaviour
     public bool playedPart = false;
     public GameObject HazardOnsetManagerScript;
 
+    public GameObject warningIcon;
+
     [SerializeField] Vector3 currentVectorPosition;
 
 
@@ -33,6 +35,7 @@ public class RobotHazardCue : MonoBehaviour
     void Start()
     {
         startingPosition = transform.position;
+        warningIcon.SetActive(false);
 
         playedPart = false;
         rend.enabled = false;
@@ -53,6 +56,7 @@ if (hazardStatus == true && !playedPart)
 {
     Instantiate(Particles);
     playedPart = true;
+ 
 }
 
 if (hazardStatus == true)
@@ -60,6 +64,10 @@ if (hazardStatus == true)
     transform.position = new Vector3(Mathf.Sin(Time.time * speed) * amount, transform.position.y, transform.position.z);
     rend.enabled = true;
     Particles.transform.position = currentVectorPosition + new Vector3(0f, yOffsetpart, 0f);
+    if (warningIcon !=null)
+    {
+        warningIcon.SetActive(true);
+    }
     
 }
 else if (hazardStatus == false)
@@ -67,6 +75,8 @@ else if (hazardStatus == false)
     playedPart = false;
     rend.enabled = false;
     transform.position = transform.position;
+    warningIcon.SetActive(false);
+
 }
 
         
