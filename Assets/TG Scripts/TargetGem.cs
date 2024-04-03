@@ -22,9 +22,10 @@ public class TargetGem : MonoBehaviour
 
     public MeshRenderer RobotMesh;
 
+    public GameObject RobotHands;
+
     public MeshRenderer EarsMesh;
     public MeshRenderer AntennaMesh;
-
 
     public float  rotationSpeed = 1.0f;
 
@@ -39,10 +40,7 @@ public class TargetGem : MonoBehaviour
     public Vector3 CentreTarget = new Vector3(0f, 0f, 0.5f);
     // Start is called before the first frame update
     void Start()
-    {
-        
-        thisHead = GameObject.Find("Robot_Guardian");
-       
+    {      
         transform.LookAt(targetCamera);
         showHead = true;
 
@@ -80,23 +78,27 @@ public class TargetGem : MonoBehaviour
     
         showHead = HazardWarningObject.GetComponent<HazardOnsetManager>().stopwatchRunning;
 
+        RobotHands.SetActive(showHead);
         if (showHead == false)
             {
                 RobotMesh.enabled = false;
                 EarsMesh.enabled = false;
                 AntennaMesh.enabled = false;
+
             }
         else if (showHead == true)
             {
                 RobotMesh.enabled = true;
                 EarsMesh.enabled = true;
                 AntennaMesh.enabled = true;
+
             }
         else
         {
             RobotMesh.enabled = true;
             EarsMesh.enabled = true;
             AntennaMesh.enabled = true;
+
         }
         
     }

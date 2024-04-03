@@ -9,7 +9,7 @@ public class RobotHazardCue : MonoBehaviour
     Vector3 startingPosition;
     [SerializeField] Vector3 movementVector;
     [SerializeField] [Range(0,1)] float movementFactor;
-    [SerializeField] float period = 0.5f;
+    //[SerializeField] float period = 0.5f;
 
 
     [SerializeField] float speed = 0.5f;
@@ -20,15 +20,16 @@ public class RobotHazardCue : MonoBehaviour
     public bool hazardStatus = false;
 
     public bool playedPart = false;
-    public GameObject HazardOnsetManagerScript;
+    public GameObject HazardWarningObject;
 
     public GameObject warningIcon;
+
 
     [SerializeField] Vector3 currentVectorPosition;
 
 
     [SerializeField] ParticleSystem Particles;
-    [SerializeField] public float yOffsetpart = 0f;
+    [SerializeField] public Vector3 yOffsetpart = new Vector3(0f,0f,0f);
 
 
     // Start is called before the first frame update
@@ -49,7 +50,7 @@ public class RobotHazardCue : MonoBehaviour
         currentVectorPosition = this.transform.position;
         
 
-        hazardStatus = HazardOnsetManagerScript.GetComponent<HazardOnsetManager>().preHazard;
+        hazardStatus = HazardWarningObject.GetComponent<HazardOnsetManager>().preHazard;
 
         
 if (hazardStatus == true && !playedPart)
@@ -63,12 +64,12 @@ if (hazardStatus == true)
 {
     transform.position = new Vector3(Mathf.Sin(Time.time * speed) * amount, transform.position.y, transform.position.z);
     rend.enabled = true;
-    Particles.transform.position = currentVectorPosition + new Vector3(0f, yOffsetpart, 0f);
+    Particles.transform.position = currentVectorPosition + yOffsetpart;
     if (warningIcon !=null)
     {
         warningIcon.SetActive(true);
     }
-    
+
 }
 else if (hazardStatus == false)
 {
