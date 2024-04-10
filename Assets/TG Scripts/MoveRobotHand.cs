@@ -22,6 +22,9 @@ public class MoveRobotHand : MonoBehaviour
     public float  travelSpeed = 0.05f;
     public float  rotationSpeed = 1.0f;
 
+    public bool faceScreen = false;
+
+
     public Quaternion handOffset = Quaternion.Euler(-30f, 0f, 0f);
    
 
@@ -29,12 +32,7 @@ public class MoveRobotHand : MonoBehaviour
     void Start()
     {
         HazardWarningObject = GameObject.Find("HazardWarning");
-        
-        if (targetHandObject == null)
-                {
-                    targetHandObject = GameObject.Find("VisualCue");
-                }
-          
+                  
     }
 
     // Update is called once per frame
@@ -42,7 +40,12 @@ public class MoveRobotHand : MonoBehaviour
     {
         hazardStatus = HazardWarningObject.GetComponent<HazardOnsetManager>().preHazard;
         hazardLocation = HazardWarningObject.GetComponent<HazardOnsetManager>().hazardLocation;
+        
+        targetHandObject = GameObject.Find("VisualCue");
+        if (targetHandObject != null && faceScreen == true)
+        {
         transform.LookAt(targetHandObject.transform.position);
+        }
 
             if (hazardLocation <= 2)
                 {
@@ -58,6 +61,10 @@ public class MoveRobotHand : MonoBehaviour
 
     }
 
+   public void HandsFaceScreen()
+    {
+        faceScreen = true;
+    }
 
 
 }

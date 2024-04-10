@@ -1196,15 +1196,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
       propertyPath: baseColour.b
-      value: 0.4039216
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
       propertyPath: baseColour.g
-      value: 0.22352943
+      value: 0.38431373
       objectReference: {fileID: 0}
     - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
       propertyPath: baseColour.r
-      value: 0.050980397
+      value: 0.09803922
       objectReference: {fileID: 0}
     - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
       propertyPath: HazardOnsetManagerScript

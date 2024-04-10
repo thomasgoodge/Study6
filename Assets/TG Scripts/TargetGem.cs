@@ -22,6 +22,7 @@ public class TargetGem : MonoBehaviour
 
     public MeshRenderer RobotMesh;
 
+    public GameObject RobotHead;
     public GameObject RobotHands;
 
     public MeshRenderer EarsMesh;
@@ -43,6 +44,7 @@ public class TargetGem : MonoBehaviour
     {      
         transform.LookAt(targetCamera);
         showHead = true;
+        RobotHands = GameObject.Find("RobotHands");
 
         if (visualCueObject == null)
         {
@@ -79,6 +81,8 @@ public class TargetGem : MonoBehaviour
         showHead = HazardWarningObject.GetComponent<HazardOnsetManager>().stopwatchRunning;
 
         RobotHands.SetActive(showHead);
+
+        RobotHead.SetActive(showHead);
         if (showHead == false)
             {
                 RobotMesh.enabled = false;

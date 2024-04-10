@@ -22,7 +22,7 @@ public class Oscillator : MonoBehaviour
     void Update()
     {
         Oscillate();
-        currentPosition = transform.position;
+//        currentPosition = transform.position;
 
     }
 
@@ -37,7 +37,7 @@ public class Oscillator : MonoBehaviour
         movementFactor = (rawSinWave + 1f) / 2f; // recalculated to go from 0 : 1 as opposed to sign wave -1 : 1
 
         Vector3 offset = movementVector * movementFactor;
-        transform.position = currentPosition + offset;
+        transform.position = startingPostiion + offset;
     }
 
     public void StartBounce()

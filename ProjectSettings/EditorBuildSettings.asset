@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/TG Scenes/Control.unity
     guid: 5b4be630ae39fae4a8076c58dd8b5331
   - enabled: 1
-    path: Assets/TG Scenes/S6AgentSocialCue.unity
-    guid: e63eb7cd87354c5478f42e5379e19788
-  - enabled: 1
     path: Assets/TG Scenes/S6AgentColourCue.unity
     guid: 870d4caaf10b87943a257c40278f2386
+  - enabled: 1
+    path: Assets/TG Scenes/S6AgentSocialCue.unity
+    guid: ec8a7371557827f409dbfc3a2e551793
   - enabled: 1
     path: Assets/TG Scenes/S6TargetColourCue.unity
     guid: 1336465a20e4aaa4eb368aa99d26ec16
