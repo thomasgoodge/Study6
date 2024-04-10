@@ -26,6 +26,7 @@ public class RobotHazardCue : MonoBehaviour
 
 
     [SerializeField] Vector3 currentVectorPosition;
+    [SerializeField] Vector3 ParticlesVectorPosition;
 
 
     [SerializeField] ParticleSystem Particles;
@@ -48,6 +49,7 @@ public class RobotHazardCue : MonoBehaviour
     {
        // Oscillate();
         currentVectorPosition = this.transform.position;
+        ParticlesVectorPosition = currentVectorPosition + yOffsetpart;
         
 
         hazardStatus = HazardWarningObject.GetComponent<HazardOnsetManager>().preHazard;
@@ -56,6 +58,7 @@ public class RobotHazardCue : MonoBehaviour
 if (hazardStatus == true && !playedPart)
 {
     Instantiate(Particles);
+    Particles.Play();     
     playedPart = true;
  
 }
