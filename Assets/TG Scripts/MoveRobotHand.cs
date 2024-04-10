@@ -29,11 +29,12 @@ public class MoveRobotHand : MonoBehaviour
     void Start()
     {
         HazardWarningObject = GameObject.Find("HazardWarning");
+        
         if (targetHandObject == null)
                 {
                     targetHandObject = GameObject.Find("VisualCue");
                 }
-           
+          
     }
 
     // Update is called once per frame

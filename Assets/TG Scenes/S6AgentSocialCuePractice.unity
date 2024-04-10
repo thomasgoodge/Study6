@@ -422,6 +422,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1580680043}
     - target: {fileID: 8747968863571613615, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1785324115453430901}
+    - target: {fileID: 8747968863571613615, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: StartSpawner
       objectReference: {fileID: 0}
@@ -434,8 +438,16 @@ PrefabInstance:
       value: StartSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 8747968863571613615, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: HeadFaceScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747968863571613615, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}
       propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
       value: Spawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747968863571613615, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}
+      propertyPath: ButtonReleased.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: TargetGem, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4f8c6d50902cab469126db93dd2c2e0, type: 3}

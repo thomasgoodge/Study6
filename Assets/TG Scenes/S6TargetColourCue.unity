@@ -1190,6 +1190,26 @@ PrefabInstance:
       propertyPath: HazardWarningObject
       value: 
       objectReference: {fileID: 442944884}
+    - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
+      propertyPath: baseColour.b
+      value: 0.4039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
+      propertyPath: baseColour.g
+      value: 0.22352943
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
+      propertyPath: baseColour.r
+      value: 0.050980397
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498504172364770031, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
+      propertyPath: HazardOnsetManagerScript
+      value: 
+      objectReference: {fileID: 442944884}
     - target: {fileID: 5498504173024918573, guid: 35cb5bccc795f2a45a4f5d6629d41420, type: 3}
       propertyPath: m_RootOrder
       value: 19
