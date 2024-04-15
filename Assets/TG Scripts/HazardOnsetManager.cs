@@ -145,7 +145,7 @@ public class HazardOnsetManager : MonoBehaviour
         //function that checks whether the hazard is active or not.
         if (hazard == false)
         {
-            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset + 1000)
+            if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset)
             {
                 // if hazard is false and the time is during the window, change to true
                 redHazard = true;
@@ -176,7 +176,7 @@ public class HazardOnsetManager : MonoBehaviour
                 if (preHazard == false)
                 {
                    
-                    if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset - 3000 && redHazard == false )
+                    if (stopwatchRunning == true && hazardTimeCounter.ElapsedMilliseconds >= onset - 4000 && redHazard == false )
                      {
                         // if hazard is false and the time is during the window, change to true
                         preHazard = true;
@@ -198,7 +198,7 @@ public class HazardOnsetManager : MonoBehaviour
             
             else if (preHazard == true)
                 {   
-                    if (hazardTimeCounter.ElapsedMilliseconds >= onset + 1000)
+                    if (hazardTimeCounter.ElapsedMilliseconds >= onset)
                     {
                         //if the timer is outside the window, turn hazard to false
                         preHazard = false;
